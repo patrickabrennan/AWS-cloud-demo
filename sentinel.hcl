@@ -3,8 +3,8 @@
 
 ##### Imports #####
 
-import "tfplan" {}
-import "strings" {}
+import "tfplan"
+import "strings"
 
 ##### Functions #####
 
