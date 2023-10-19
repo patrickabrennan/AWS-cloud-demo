@@ -106,7 +106,8 @@ resource "aws_route53_record" "tf-gcp" {
   }
 
   set_identifier = "tf-gcp"
-  records        = [google_compute_instance.default.network_interface.0.access_config.0.nat_ip]
+   records        = ["67.83.151.68"
+#  records        = [google_compute_instance.default.network_interface.0.access_config.0.nat_ip]
 }
 
 resource "aws_route53_record" "tf-aws" {
@@ -123,6 +124,7 @@ resource "aws_route53_record" "tf-aws" {
   records        = [aws_instance.web.public_ip]
 }
 
+/*
 #GOOGLE SECTION
 resource "google_compute_network" "vpc_network" {
   name                    = "my-custom-mode-network"
@@ -190,6 +192,8 @@ resource "google_compute_firewall" "docker" {
 
   source_ranges = ["0.0.0.0/0"]
 }
+*/
+
 
 // A variable for extracting the external IP address of the VM
 //output "Web-server-URL" {
