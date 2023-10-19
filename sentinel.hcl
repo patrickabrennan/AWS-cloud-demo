@@ -24,3 +24,4 @@ violations = length(violatingEC2Instances["messages"])
 main = rule {
   violations is 0
 }
+
