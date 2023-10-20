@@ -4,7 +4,7 @@ aws_instance_key       = "TerraForm"
 aws_vpc_cidr           = "178.0.0.0/16"
 aws_public_subnet_cidr = "178.0.10.0/24"
 aws_availability_zone  = "us-east-2a"
-aws_ami                = "ami-0f34c5ae932e6f0e4"
+aws_ami                = "ami-09d9029d9fc5e5238"
 
 aws_dns_name = "tf-demo"
 
