@@ -70,7 +70,7 @@ resource "aws_route_table_association" "public_rt_asso" {
 resource "aws_instance" "web" {
   ami             = var.aws_ami
   instance_type   = var.aws_instance_type
-  key_name        = var.aws_instance_key
+  #key_name        = var.aws_instance_key
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
 
