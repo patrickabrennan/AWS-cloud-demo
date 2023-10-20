@@ -98,7 +98,7 @@ resource "aws_instance" "web" {
 
 
 resource "aws_route53_record" "tf-demo" {
-  zone_id = "Z05503071D84M2G5J10GS"
+  zone_id = "Z08017432VFWFXO6IWHIK"
   name    = var.aws_dns_name
   type    = "A"
   ttl     = 300
