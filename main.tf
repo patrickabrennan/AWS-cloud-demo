@@ -73,6 +73,8 @@ resource "aws_instance" "web" {
   #key_name        = var.aws_instance_key
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
+  availability_zone = var.aws_availability_zone
+
 
   user_data = <<-EOF
     #!/bin/bash
