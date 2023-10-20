@@ -95,6 +95,20 @@ resource "aws_instance" "web" {
   }
 }
 
+
+
+resource "aws_route53_record" "tf-demo" {
+  zone_id = "Z2ZGZTIWHCNAUW"
+  name    = var.aws_dns_name
+  type    = "A"
+  ttl     = 300
+  records = [aws_instance.web.public_ip]
+}
+
+
+
+/*
+
 resource "aws_route53_record" "tf-gcp" {
   zone_id = "Z2ZGZTIWHCNAUW"
   name    = var.aws_dns_name
@@ -123,6 +137,8 @@ resource "aws_route53_record" "tf-aws" {
   set_identifier = "tf-aws"
   records        = [aws_instance.web.public_ip]
 }
+
+*/
 
 /*
 #GOOGLE SECTION
