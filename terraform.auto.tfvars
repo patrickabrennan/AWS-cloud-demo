@@ -6,7 +6,7 @@ aws_public_subnet_cidr = "178.0.10.0/24"
 aws_availability_zone  = "us-east-1a"
 aws_ami                = "ami-0df435f331839b2d6"
 
-aws_dns_name = "tf-demo"
+aws_dns_name = "maps"
 
 
 gcp_machine_type  = "f1-micro"
