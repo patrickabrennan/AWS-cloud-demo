@@ -11,5 +11,5 @@ aws_dns_name = "tf-demo"
 
 gcp_machine_type  = "f1-micro"
 gcp_image         = "debian-cloud/debian-11"
-gcp_instance_name = "tf-demo"
+gcp_instance_name = "maps"
 gcp_project_id    = "sigma-lane-395917"
