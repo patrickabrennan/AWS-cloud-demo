@@ -6,9 +6,9 @@ enable_dns_hostnames   = "true"
 aws_public_subnet_cidr = "178.0.10.0/24"
 aws_availability_zone  = "us-east-1a"
 aws_ami                = "ami-0df435f331839b2d6"
-
+Environment            = "Patrick's Maps Demo"
 aws_dns_name = "maps"
-
+1
 
 gcp_machine_type  = "f1-micro"
 gcp_image         = "debian-cloud/debian-11"
