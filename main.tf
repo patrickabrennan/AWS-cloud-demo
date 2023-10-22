@@ -72,7 +72,7 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["amzn-al2023-ami-*"]
+    values = ["ami-0df435f331839b2d6"]
 }
 
   #filter {
