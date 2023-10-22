@@ -70,6 +70,7 @@ resource "aws_route_table_association" "public_rt_asso" {
 
 data "aws_ami" "amazon-linux-2" {
  most_recent = true
+ owners      = ["self"]
 
 
  filter {
