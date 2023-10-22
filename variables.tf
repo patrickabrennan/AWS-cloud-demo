@@ -30,6 +30,13 @@ variable "aws_dns_name" {
   type = string
 }
 
+variable "enable_dns_hostnames"
+  type = string
+}
+
+variable "Environment"
+  type = string
+
 #GCP Variables
 variable "gcp_region" {
   type    = string
