@@ -113,8 +113,16 @@ resource "aws_instance" "web" {
   tags = {
     Name = "web_instance"
     Environment = "prod"
-    mandatory_tags = ["Patrick's Maps Demo, 7 Days, Pat Brennan, East-R2, Demo including Google Maps Application with location capability, 1.6.2"]
   }
+
+mandatory_tags = {
+"Patrick's Maps Demo", 
+"7 Days", 
+"Pat Brennan", 
+"East-R2", 
+"Demo including Google Maps Application with location capability", 
+"1.6.2"
+}
 
   volume_tags = {
     Name = "web_instance"
