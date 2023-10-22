@@ -95,6 +95,7 @@ resource "aws_instance" "web" {
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
   availability_zone = var.aws_availability_zone
+  Environment = var.Environment
 
 
   user_data = <<-EOF
