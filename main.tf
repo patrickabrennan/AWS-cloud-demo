@@ -67,12 +67,12 @@ resource "aws_route_table_association" "public_rt_asso" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-data "aws_ami" "amazon" {
+data "aws_ami" "amazon_linux" {
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["/images/amazon/al2023-ami-2023.2.20231016.0-kernel-6.1-x86_64"]
+    values = ["amzn-ami-hvm-*"]
 }
 
   #filter {
