@@ -112,7 +112,7 @@ resource "aws_instance" "web" {
 
   tags = {
     Name = "web_instance"
-    Environment = "Patrick's Maps Demo"
+    Environment = "prod"
   }
 
   volume_tags = {
