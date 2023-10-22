@@ -72,7 +72,7 @@ data "aws_ami" "amazon" {
 
   filter {
     name   = "name"
-    values = ["amazon/al2023-ami-2023.2.20231016.0-kernel-6.1-x86_64"]
+    values = ["/images/amazon/al2023-ami-2023.2.20231016.0-kernel-6.1-x86_64"]
 }
 
   #filter {
