@@ -85,7 +85,7 @@ data "aws_ami" "amazon_linux" {
 
 resource "aws_instance" "web" {
   #ami             = var.aws_ami
-  ami             = data.aws_ami.amazon.id
+  ami             = data.aws_ami.amazon_linux.id
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
   subnet_id       = aws_subnet.public_subnet.id
