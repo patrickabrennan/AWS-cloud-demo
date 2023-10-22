@@ -72,7 +72,7 @@ data "aws_ami" "amazon" {
 
   filter {
     name   = "name"
-    values = ["amazon/al2023-ami-*"]
+    values = ["amazon/al2023-ami-2023.2.20231016.0-kernel-6.1-x86_64"]
 }
 
   #filter {
@@ -80,7 +80,7 @@ data "aws_ami" "amazon" {
     #values = ["hvm"]
   #}
 
-  #owners = ["099720109477"] # Canonical
+  owners = ["137112412989"] # Canonical
 }
 
 resource "aws_instance" "web" {
