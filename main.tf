@@ -113,12 +113,7 @@ resource "aws_instance" "web" {
   tags = {
     Name = "web_instance"
     Environment = "prod"
-    Name = "Patrick's Maps Demo" 
-    ttl = "7 Days"
-    owner = "Pat Brennan"
-    se-region = East-R2 
-    purpose = "Demo including Google Maps Application with location capability"
-   terraform = "Used to deploy"
+    mandatory_tags = [Patrick's Maps Demo", "7 Days", "Pat Brennan", East-R2, "Demo including Google Maps Application with location capability", "1.6.2"]
   }
 
   volume_tags = {
