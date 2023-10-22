@@ -67,25 +67,28 @@ resource "aws_route_table_association" "public_rt_asso" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
+data "aws_ami" "amazon-linux-2" {
+ most_recent = true
 
-  filter {
-    name   = "name"
-    values = ["amzn-ami-0df435f331839b2d6"]
+
+ filter {
+   name   = "owner-alias"
+   values = ["amazon"]
+ }
+
+
+ filter {
+   name   = "name"
+   values = ["amzn2-ami-hvm*"]
+ }
 }
 
-  #filter {
-   # name   = "virtualization-type"
-    #values = ["hvm"]
-  #}
 
-  owners = ["137112412989"] # Canonical
-}
+
 
 resource "aws_instance" "web" {
   #ami             = var.aws_ami
-  ami             = data.aws_ami.amazon_linux.id
+  ami             = "${data.aws_ami.amazon-linux-2.id}"
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
   subnet_id       = aws_subnet.public_subnet.id
