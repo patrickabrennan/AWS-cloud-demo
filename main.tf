@@ -82,6 +82,8 @@ data "aws_ami" "amazon-linux-2" {
    name   = "name"
    values = ["amzn2-ami-hvm*"]
  }
+
+ owners = [self]
 }
 
 
