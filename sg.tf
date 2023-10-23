@@ -6,6 +6,7 @@ resource "aws_security_group" "sg" {
 
 resource "aws_security_group_rule allow_ssh" {
     type            = "ingress" 
+    name          = "Allow-ssh"
     description      = "SSH from VPC"
     from_port        = 22
     to_port          = 22
@@ -17,6 +18,7 @@ resource "aws_security_group_rule allow_ssh" {
 
 resource "aws_security_group_rule allow_http" {
     type            = "ingress"
+    name          = "Allow-http"
     description      = "HTTP from VPC"
     from_port        = 80
     to_port          = 80
@@ -28,6 +30,7 @@ resource "aws_security_group_rule allow_http" {
 
 resource "aws_security_group_rule allow_https" {
     type            = "ingress" 
+    name          = "Allow-https"
     description      = "HTTPS from VPC"
     from_port        = 443
     to_port          = 443
