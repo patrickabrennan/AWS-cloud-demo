@@ -23,7 +23,7 @@ provider "google" {
 
 # Create a VPC
 resource "aws_vpc" "app_vpc" {
-  cidr_block = var.aws_vpc_cidr
+  cidr_block = "${var.aws_vpc_cidr}"
   enable_dns_hostnames = var.enable_dns_hostnames
 
   tags = {
