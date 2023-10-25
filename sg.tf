@@ -3,6 +3,7 @@ resource "aws_security_group" "sg" {
   description = "Allow ssh http https inbound traffic"
   vpc_id      = aws_vpc.app_vpc.id
 
+  /*
   ingress {
     description      = "SSH from VPC"
     from_port        = 22
@@ -12,7 +13,7 @@ resource "aws_security_group" "sg" {
     cidr_blocks      = ["0.0.0.0/0"]
     #ipv6_cidr_blocks = ["::/0"]
   }
-
+  */
   ingress {
     description      = "HTTP from VPC"
     from_port        = 80
