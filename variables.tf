@@ -8,7 +8,7 @@ variable "name" {
 
 
 
-variable "subnet_ids" {
+variable "count" {
   default =  [ "s1", "s2", "s3" ]
 }
 
