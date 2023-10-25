@@ -4,18 +4,6 @@ variable "name" {
   default     = "pb-name"
 }
 
-
-
-
-
-variable "count" {
-  default =  [ "s1", "s2", "s3" ]
-}
-
-
-
-
-
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
   type        = string
