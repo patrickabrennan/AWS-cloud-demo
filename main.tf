@@ -89,14 +89,12 @@ data "aws_ami" "amazon-linux-2" {
 
 
 resource "aws_instance" "web" {
-  count = "${var.count}"
-  subnet_id = "${element(var.subnet_ids, count.index)}"
   #ami             = var.aws_ami
   ami             = "${data.aws_ami.amazon-linux-2.id}"
   ##ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
-  #subnet_id       = aws_subnet.public_subnet.id
+  subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
   availability_zone = var.aws_availability_zone
 
