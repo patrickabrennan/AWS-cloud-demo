@@ -94,7 +94,8 @@ resource "aws_instance" "web" {
   ##ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
-  subnet_id       = aws_subnet.public_subnet.id
+  subnet_id        = element(tolist(aws_subnet_ids.public_subnet.ids), 0)
+  #subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
   availability_zone = var.aws_availability_zone
   
