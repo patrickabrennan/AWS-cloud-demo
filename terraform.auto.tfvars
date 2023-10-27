@@ -1,5 +1,5 @@
 aws_region             = "us-east-1"
-aws_instance_type      = "t2.small"
+aws_instance_type      = "t3.small"
 aws_instance_key       = "TerraForm"
 aws_vpc_cidr           = "178.0.0.0/16"
 enable_dns_hostnames   = "true"
