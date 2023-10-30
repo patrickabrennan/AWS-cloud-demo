@@ -139,7 +139,7 @@ resource "aws_route53_record" "tf-demo" {
   name    = var.aws_dns_name
   type    = "A"
   ttl     = 300
-  records = [aws_instance.web.public_ip]
+  records = [aws_instance.web[count.index].public_ip]
 }
 
 
