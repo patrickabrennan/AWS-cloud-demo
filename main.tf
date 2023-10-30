@@ -94,13 +94,14 @@ data "aws_ami" "amazon-linux-2" {
 
 resource "aws_instance" "web" {
   #count = length(var.subnet_ids)
-  count = 1
+  #count = 1
   #ami             = var.aws_ami
   ami             = "${data.aws_ami.amazon-linux-2.id}"
   ##ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
-  subnet_id       = aws_subnet.public_subnet.id[count.index]
+  #subnet_id       = aws_subnet.public_subnet.id[count.index]
+  subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
   availability_zone = var.aws_availability_zone
 
@@ -139,7 +140,8 @@ resource "aws_route53_record" "tf-demo" {
   name    = var.aws_dns_name
   type    = "A"
   ttl     = 300
-  records = [aws_instance.web[count.index].public_ip]
+  #records = [aws_instance.web[count.index].public_ip]
+  records = [aws_instance.web.public_ip]
 }
 
 
