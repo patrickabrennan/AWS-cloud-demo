@@ -31,9 +31,9 @@ resource "aws_vpc" "app_vpc" {
   }
 }
 
-data "aws_subnet" "subnet_ids" {
-  id = var.subnet_id
-}
+#data "aws_subnet" "subnet_ids" {
+#  id = var.subnet_id
+#}
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.app_vpc.id
@@ -93,7 +93,8 @@ data "aws_ami" "amazon-linux-2" {
 
 
 resource "aws_instance" "web" {
-  count = length(var.subnet_ids)
+  #count = length(var.subnet_ids)
+  count = 1
   #ami             = var.aws_ami
   ami             = "${data.aws_ami.amazon-linux-2.id}"
   ##ami             = data.aws_ami.amazon-linux-2.id
