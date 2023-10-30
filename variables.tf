@@ -4,6 +4,10 @@ variable "name" {
   default     = "pb-name"
 }
 
+variable "subnet_ids" {
+  type = list(string)
+}
+
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
   type        = string
