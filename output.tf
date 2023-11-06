@@ -1,6 +1,6 @@
 #output "web_instance_ip" {
 output "aws_instance_ip" {
-  value = aws_instance.web.public_ip
+  value = aws_instance.web[count.index].public_ip
 }
 
 #output "Web-server-URL" {
