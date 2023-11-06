@@ -105,7 +105,7 @@ resource "aws_instance" "web" {
   #key_name        = var.aws_instance_key
 
   #Added 11-4-2023 for count
-  subnet_id              = aws_subnet.public_subnet[count.index % length(aws_subnet.public_subnet)] 
+  subnet_id              = aws_subnet.public_subnet[0]
   #End 11-4-2023
 
   #subnet_id       = aws_subnet.public_subnet.id[count.index]
