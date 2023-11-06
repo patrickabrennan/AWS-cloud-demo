@@ -109,7 +109,10 @@ resource "aws_instance" "web" {
   #End 11-4-2023
 
   #subnet_id       = aws_subnet.public_subnet.id[count.index]
-  subnet_id       = aws_subnet.public_subnet.id
+
+  #Commented out 11-4-2023
+  #subnet_id       = aws_subnet.public_subnet.id
+
   security_groups = [aws_security_group.sg.id]
   availability_zone = var.aws_availability_zone
 
