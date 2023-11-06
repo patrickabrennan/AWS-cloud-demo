@@ -93,6 +93,9 @@ data "aws_ami" "amazon-linux-2" {
 
 
 resource "aws_instance" "web" {
+  #Added 11-4-2023 for count 
+  count = var.instances_per_subnet * length(app_vpc.public_subnet)
+  #End 11-4-2023 
   #count = length(var.subnet_ids)
   #count = 1
   #ami             = var.aws_ami
@@ -100,6 +103,11 @@ resource "aws_instance" "web" {
   ##ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = var.aws_instance_type
   #key_name        = var.aws_instance_key
+
+  #Added 11-4-2023 for count
+  subnet_id              = app_vpc.public_subnet[count.index % length(app_vpc.public_subnet)]
+  #End 11-4-2023
+
   #subnet_id       = aws_subnet.public_subnet.id[count.index]
   subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
