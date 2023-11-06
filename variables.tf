@@ -8,6 +8,14 @@ variable "name" {
 #  type = list(string)
 #}
 
+#Added 11-4-2023 for count
+variable "instances_per_subnet" {
+  description = "Number of EC2 instances in each private subnet"
+  type        = number
+  default     = 1
+}
+
+
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
   type        = string
