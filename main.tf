@@ -144,8 +144,8 @@ resource "aws_instance" "web" {
   }
 }
 
-
-
+#commented out 11-4-2023
+\*
 resource "aws_route53_record" "tf-demo" {
   zone_id = "Z08017432VFWFXO6IWHIK"
   name    = var.aws_dns_name
@@ -154,7 +154,7 @@ resource "aws_route53_record" "tf-demo" {
   #records = [aws_instance.web[count.index].public_ip]
   records = [aws_instance.web[count.index].public_ip]
 }
-
+*/
 
 
 /*
