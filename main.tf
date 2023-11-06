@@ -152,7 +152,7 @@ resource "aws_route53_record" "tf-demo" {
   type    = "A"
   ttl     = 300
   #records = [aws_instance.web[count.index].public_ip]
-  records = [aws_instance.web.public_ip]
+  records = [aws_instance.web[count.index].public_ip]
 }
 
 
